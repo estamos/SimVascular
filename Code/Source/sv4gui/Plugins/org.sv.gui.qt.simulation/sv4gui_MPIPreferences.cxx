@@ -267,7 +267,7 @@ sv4guiMPIPreferences::MpiImplementation sv4guiMPIPreferences::DetermineMpiImplem
     QString output(checkMpi->readAllStandardOutput());
     if (output.contains("mpich")) {
       implementation = MpiImplementation::MPICH;
-    } else if (output.contains("OpenRTE")) {
+    } else if (output.contains("OpenRTE") || output.contains("OpenMPI")) {
       implementation = MpiImplementation::OpenMPI;
     } else {
       implementation = MpiImplementation::Unknown;
